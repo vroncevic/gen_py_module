@@ -23,6 +23,7 @@ other information that should be provided before the modules are installed.
     - [Install using docker](#install-using-docker)
 - [Dependencies](#dependencies)
 - [Tool structure](#tool-structure)
+- [Code structure](#code-coverage)
 - [Docs](#docs)
 - [Contributing](#contributing)
 - [Copyright and licence](#copyright-and-licence)
@@ -137,11 +138,11 @@ Generator structure
 
 | Name | Stmts | Miss | Cover |
 |------|-------|------|-------|
-| `gen_py_module/__init__.py` | 75 | 14 | 81% |
-| `gen_py_module/pro/__init__.py` | 62 | 2 | 97% |
-| `gen_py_module/pro/read_template.py` | 66 | 13 | 80% |
-| `gen_py_module/pro/write_template.py` | 52 | 3 | 94% |
-| **Total** | 255 | 32 | 87% |
+| `gen_py_module/__init__.py` | 73 | 12 | 84%|
+| `gen_py_module/pro/__init__.py` | 60 | 0 | 100%|
+| `gen_py_module/pro/read_template.py` | 64 | 11 | 83%|
+| `gen_py_module/pro/write_template.py` | 50 | 1 | 98%|
+| **Total** | 247 | 24 | 90% |
 
 ### Docs
 
@@ -160,7 +161,7 @@ More documentation and info at
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2017 - 2024 by [vroncevic.github.io/gen_py_module](https://vroncevic.github.io/gen_py_module)
+Copyright (C) 2017 - 2026 by [vroncevic.github.io/gen_py_module](https://vroncevic.github.io/gen_py_module)
 
 **gen_py_module** is free software; you can redistribute it and/or modify
 it under the same terms as Python itself, either Python version 3.x or,
