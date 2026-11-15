@@ -1,0 +1,80 @@
+{
+    "empty": {
+        "source_dir": "empty_templates",
+        "path_replacements": {
+            "core_module": "project_name"
+        },
+        "exclude": [
+            "**/.coverage",
+            "**/.vscode/**",
+            "**/.git/**"
+        ]
+    },
+    "main": {
+        "source_dir": "main_templates",
+        "path_replacements": {
+            "core_module": "project_name"
+        },
+        "exclude": [
+            "**/.coverage",
+            "**/.vscode/**",
+            "**/.git/**"
+        ]
+    },
+    "class": {
+        "source_dir": "class_templates",
+        "path_replacements": {
+            "core_module": "project_name"
+        },
+        "exclude": [
+            "**/.coverage",
+            "**/.vscode/**",
+            "**/.git/**"
+        ]
+    },
+    "protocol": {
+        "source_dir": "protocol_templates",
+        "path_replacements": {
+            "icore_module": "protocol_name"
+        },
+        "exclude": [
+            "**/.coverage",
+            "**/.vscode/**",
+            "**/.git/**"
+        ]
+    },
+    "dataclass": {
+        "source_dir": "dataclass_templates",
+        "path_replacements": {
+            "core_module": "project_name"
+        },
+        "exclude": [
+            "**/.coverage",
+            "**/.vscode/**",
+            "**/.git/**"
+        ]
+    },
+    "base": {
+        "source_dir": "base_templates",
+        "path_replacements": {
+            "core_module": "project_name"
+        },
+        "exclude": [
+            "**/.coverage",
+            "**/.vscode/**",
+            "**/.git/**"
+        ]
+    },
+    "abc": {
+        "source_dir": "abc_templates",
+        "path_replacements": {
+            "core_module": "project_name"
+        },
+        "exclude": [
+            "**/.coverage",
+            "**/.vscode/**",
+            "**/.git/**"
+        ]
+    }
+}
+

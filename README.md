@@ -1,42 +1,46 @@
-# Generate Python Module
+# Generate Python module
 
 <img align="right" src="https://raw.githubusercontent.com/vroncevic/gen_py_module/dev/docs/gen_py_module_logo.png" width="25%">
 
-**gen_py_module** is tool for generation PY Module.
+**gen_py_module** is toolset for generation of Clean Architecture Python modules.
 
-Developed in **[python](https://www.python.org/)** code: **100%**.
+Developed in **[python](https://www.python.org/)** code.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-[![gen_py_module python checker](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_python_checker.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_python_checker.yml) [![gen_py_module package checker](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_package_checker.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_package.yml) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/gen_py_module.svg)](https://github.com/vroncevic/gen_py_module/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/gen_py_module.svg)](https://github.com/vroncevic/gen_py_module/graphs/contributors)
+[![gen_py_module python checker](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_python_checker.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_python_checker.yml) [![gen_py_module package checker](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_package_checker.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_package_checker.yml) [![gen_py_module interface checker](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_interface_checker.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_interface_checker.yml) [![gen_py_module isp checker](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_isp_checker.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_isp_checker.yml) [![gen_py_module srp checker](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_srp_checker.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_srp_checker.yml) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/gen_py_module.svg)](https://github.com/vroncevic/gen_py_module/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/gen_py_module.svg)](https://github.com/vroncevic/gen_py_module/graphs/contributors)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Installation](#installation)
+- [🚀 Installation](#-installation)
     - [Install using pip](#install-using-pip)
     - [Install using build](#install-using-build)
     - [Install using py setup](#install-using-py-setup)
     - [Install using docker](#install-using-docker)
-- [Dependencies](#dependencies)
-- [Tool structure](#tool-structure)
-- [Code structure](#code-coverage)
-- [Docs](#docs)
-- [Contributing](#contributing)
-- [Copyright and licence](#copyright-and-licence)
+- [📦 Dependencies](#-dependencies)
+- [📁 Tool structure](#-tool-structure)
+  - [✨ Features](#-features)
+- [📊 Code coverage](#-code-coverage)
+- [🛠 Usage](#-usage)
+- [📚 Docs](#-docs)
+- [👥 Contributing](#-contributing)
+- [📄 Copyright and licence](#-copyright-and-licence)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### Installation
+### 🚀 Installation
+
+Used next development environment
 
 ![debian linux os](https://raw.githubusercontent.com/vroncevic/gen_py_module/dev/docs/debtux.png)
 
 [![gen_py_module python3 build](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_python3_build.yml/badge.svg)](https://github.com/vroncevic/gen_py_module/actions/workflows/gen_py_module_python3_build.yml)
 
-Currently there are three ways to install package
+Currently there are four ways to install package
 * Install process based on using pip mechanism
 * Install process based on build mechanism
 * Install process based on setup.py mechanism
@@ -44,13 +48,13 @@ Currently there are three ways to install package
 
 ##### Install using pip
 
-**gen_py_module** is located at **[pypi.org](https://pypi.org/project/gen-py-module/)**.
+**gen_py_module** is located at **[pypi.org](https://pypi.org/project/gen_py_module/)**.
 
 You can install by using pip
 
 ```bash
 # python3
-pip3 install gen-py-module
+pip3 install gen_py_module
 ```
 
 ##### Install using build
@@ -64,7 +68,7 @@ tar xvzf gen_py_module-x.y.z.tar.gz
 cd gen_py_module-x.y.z/
 # python3
 wget https://bootstrap.pypa.io/get-pip.py
-python3 get-pip.py 
+python3 get-pip.py
 python3 -m pip install --upgrade setuptools
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade build
@@ -72,92 +76,203 @@ pip3 install -r requirements.txt
 python3 -m build --no-isolation --wheel
 pip3 install ./dist/gen_py_module-*-py3-none-any.whl
 rm -f get-pip.py
-chmod 755 /usr/local/lib/python3.10/dist-packages/usr/local/bin/gen_py_module_run.py
-ln -s /usr/local/lib/python3.10/dist-packages/usr/local/bin/gen_py_module_run.py /usr/local/bin/gen_py_module_run.py
 ```
 
 ##### Install using py setup
 
-Navigate to release **[page](https://github.com/vroncevic/gen_py_module/releases/)** download and extract release archive.
+Navigate to **[release page](https://github.com/vroncevic/gen_py_module/releases)** download and extract release archive.
 
 To install **gen_py_module** locate and run setup.py with arguments
 
 ```bash
 tar xvzf gen_py_module-x.y.z.tar.gz
-cd gen_py_module-x.y.z/
+cd gen_py_module-x.y.z
 # python3
 pip3 install -r requirements.txt
 python3 setup.py install_lib
-python3 setup.py install_data
 python3 setup.py install_egg_info
 ```
 
 ##### Install using docker
 
-You can use docker to create image/container.
+You can use Dockerfile to create image/container.
 
-### Dependencies
+### 📦 Dependencies
 
 **gen_py_module** requires next modules and libraries
 
-* [ats-utilities - Python App/Tool/Script Utilities](https://vroncevic.github.io/ats_utilities)
+* [ats-utilities - Python App/Tool/Script Utilities](https://pypi.org/project/ats-utilities/)
 
-### Tool structure
+### 📁 Tool structure
 
-**gen_py_module** is based on OOP
+**gen_py_module** is based on OOP and Clean Architecture.
 
-Generator structure
+Tool structure
+
+<details>
+<summary><b>Click to expand framework structure</b></summary>
 
 ```bash
     gen_py_module/
-          ├── conf/
-          │   ├── gen_py_module.cfg
-          │   ├── gen_py_module.logo
-          │   ├── gen_py_module_util.cfg
-          │   ├── project.yaml
-          │   └── template/
-          │       ├── abstract_abc_class.template
-          │       ├── abstract_base_class.template
-          │       ├── class.template
-          │       ├── empty.template
-          │       └── main.template
-          ├── __init__.py
-          ├── log/
-          │   └── gen_py_module.log
-          ├── pro/
-          │   ├── __init__.py
-          │   ├── read_template.py
-          │   └── write_template.py
-          └── run/
-              └── gen_py_module_run.py
+         ├── core/
+         │   ├── __init__.py
+         │   ├── model/
+         │   │   ├── __init__.py
+         │   │   ├── module_type.py
+         │   │   └── project_setup.py
+         │   └── service/
+         │       ├── engine.py
+         │       ├── __init__.py
+         │       ├── iservice.py
+         │       └── isubprocessor.py
+         ├── engine.py
+         ├── infrastructure/
+         │   ├── cli/
+         │   │   ├── engine.py
+         │   │   ├── icli.py
+         │   │   ├── __init__.py
+         │   │   └── setup/
+         │   │       ├── bundle.py
+         │   │       ├── dep_validator.py
+         │   │       ├── dependencies.py
+         │   │       ├── factory.py
+         │   │       ├── __init__.py
+         │   │       ├── keys.py
+         │   │       ├── opt_validator.py
+         │   │       ├── options.py
+         │   │       ├── registry.py
+         │   │       └── validator.py
+         │   ├── command/
+         │   │   ├── bundle.py
+         │   │   ├── definition.py
+         │   │   ├── executor.py
+         │   │   ├── idefinition.py
+         │   │   ├── iexecutor.py
+         │   │   └── __init__.py
+         │   ├── config/
+         │   │   ├── gen_py_module.cfg
+         │   │   ├── gen_py_module.logo
+         │   │   ├── scheme.json
+         │   │   └── templates.tgz
+         │   ├── __init__.py
+         │   └── subprocessor.py
+         ├── __init__.py
+         ├── py.typed
+         └── setup/
+             ├── bundle.py
+             ├── dep_validator.py
+             ├── dependencies.py
+             ├── factory.py
+             ├── __init__.py
+             ├── keys.py
+             ├── opt_validator.py
+             ├── options.py
+             ├── registry.py
+             └── validator.py
 
-        6 directories, 15 files
+     10 directories, 46 files
 ```
+</details>
 
-### Code coverage
+#### ✨ Features
+
+* Generates Clean Architecture Python 3.12+ modules across 7 supported module types: `empty`, `main`, `class`, `protocol`, `dataclass`, `base`, and `abc`.
+* Strictly adheres to SOLID principles, structural `Protocol` interfaces, and inward dependency inversion.
+* Robust validation of project bundles, dependencies, and options via `ats-utilities`.
+* High code quality with full static typing, 10.00/10 `pylint` score, and 100% unit test coverage.
+
+### 📊 Code coverage
+
+<details>
+<summary><b>Click to expand code coverage</b></summary>
 
 | Name | Stmts | Miss | Cover |
 |------|-------|------|-------|
-| `gen_py_module/__init__.py` | 73 | 12 | 84%|
-| `gen_py_module/pro/__init__.py` | 60 | 0 | 100%|
-| `gen_py_module/pro/read_template.py` | 64 | 11 | 83%|
-| `gen_py_module/pro/write_template.py` | 50 | 1 | 98%|
-| **Total** | 247 | 24 | 90% |
+| `gen_py_module/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/core/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/core/model/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/core/model/module_type.py` | 21 | 0 | 100%|
+| `gen_py_module/core/model/project_setup.py` | 17 | 0 | 100%|
+| `gen_py_module/core/service/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/core/service/engine.py` | 34 | 0 | 100%|
+| `gen_py_module/core/service/iservice.py` | 14 | 0 | 100%|
+| `gen_py_module/core/service/isubprocessor.py` | 14 | 0 | 100%|
+| `gen_py_module/engine.py` | 57 | 0 | 100%|
+| `gen_py_module/infrastructure/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/engine.py` | 43 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/icli.py` | 16 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/bundle.py` | 23 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/dep_validator.py` | 33 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/dependencies.py` | 19 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/factory.py` | 29 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/keys.py` | 26 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/opt_validator.py` | 33 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/options.py` | 17 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/registry.py` | 24 | 0 | 100%|
+| `gen_py_module/infrastructure/cli/setup/validator.py` | 35 | 0 | 100%|
+| `gen_py_module/infrastructure/command/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/infrastructure/command/bundle.py` | 19 | 0 | 100%|
+| `gen_py_module/infrastructure/command/definition.py` | 31 | 0 | 100%|
+| `gen_py_module/infrastructure/command/executor.py` | 32 | 0 | 100%|
+| `gen_py_module/infrastructure/command/idefinition.py` | 21 | 0 | 100%|
+| `gen_py_module/infrastructure/command/iexecutor.py` | 15 | 0 | 100%|
+| `gen_py_module/infrastructure/subprocessor.py` | 64 | 0 | 100%|
+| `gen_py_module/setup/__init__.py` | 9 | 0 | 100%|
+| `gen_py_module/setup/bundle.py` | 25 | 0 | 100%|
+| `gen_py_module/setup/dep_validator.py` | 33 | 0 | 100%|
+| `gen_py_module/setup/dependencies.py` | 21 | 0 | 100%|
+| `gen_py_module/setup/factory.py` | 45 | 0 | 100%|
+| `gen_py_module/setup/keys.py` | 27 | 0 | 100%|
+| `gen_py_module/setup/opt_validator.py` | 33 | 0 | 100%|
+| `gen_py_module/setup/options.py` | 12 | 0 | 100%|
+| `gen_py_module/setup/registry.py` | 24 | 0 | 100%|
+| `gen_py_module/setup/validator.py` | 38 | 0 | 100%|
+| **Total** | 976 | 0 | 100% |
 
-### Docs
+</details>
 
-[![Documentation Status](https://readthedocs.org/projects/gen_py_module/badge/?version=latest)](https://gen-py-module.readthedocs.io/en/latest/?badge=latest)
+### 🛠 Usage
+
+Install package
+
+```bash
+pip3 install gen_py_module
+```
+
+Prepare main entry point by downloading [main.py](https://raw.githubusercontent.com/vroncevic/gen_py_module/main/main.py) or create your own.
+
+```bash
+wget -O main.py https://raw.githubusercontent.com/vroncevic/gen_py_module/main/main.py
+```
+
+Running tool for creating Python modules across supported `--type` templates:
+
+```bash
+python3 main.py create --name core_pkg --type empty --output ./demo/empty
+python3 main.py create --name app_entry --type main --output ./demo/main
+python3 main.py create --name core_module --type class --output ./demo/class
+python3 main.py create --name core_module --type protocol --output ./demo/protocol
+python3 main.py create --name core_module --type dataclass --output ./demo/dataclass
+python3 main.py create --name core_module --type base --output ./demo/base
+python3 main.py create --name core_module --type abc --output ./demo/abc
+```
+
+### 📚 Docs
+
+[![Documentation Status](https://readthedocs.org/projects/gen_py_module/badge/?version=latest)](https://gen_py_module.readthedocs.io/en/latest/?badge=latest)
 
 More documentation and info at
 
-* [gen_py_module.readthedocs.io](https://gen-py-module.readthedocs.io)
+* [gen_py_module.readthedocs.io](https://gen_py_module.readthedocs.io)
 * [www.python.org](https://www.python.org/)
 
-### Contributing
+### 👥 Contributing
 
 [Contributing to gen_py_module](CONTRIBUTING.md)
 
-### Copyright and licence
+### 📄 Copyright and licence
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 

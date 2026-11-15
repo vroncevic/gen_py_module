@@ -1,0 +1,78 @@
+# -*- coding: UTF-8 -*-
+
+'''
+Module
+    module_type_test.py
+Copyright
+    Copyright (C) 2017 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+    gen_py_module is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the
+    Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    gen_py_module is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    See the GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License along
+    with this program. If not, see <http://www.gnu.org/licenses/>.
+Info
+    Defines unit tests for ModuleType enumeration.
+'''
+
+from __future__ import annotations
+
+from unittest import TestCase, main
+
+from gen_py_module.core.model.module_type import ModuleType
+
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright (C) 2017 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>'
+__credits__ = ['Vladimir Roncevic', 'Python Software Foundation']
+__license__ = 'https://github.com/vroncevic/gen_py_module/blob/dev/LICENSE'
+__version__ = '1.5.8'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
+
+
+class TestModuleType(TestCase):
+    '''
+        Defines unit tests for ModuleType enumeration.
+
+        It defines:
+
+            :methods:
+                | test_enum_members - Verifies all 7 ModuleType string members.
+                | test_values - Verifies ModuleType.values returns immutable tuple of values.
+    '''
+
+    def test_enum_members(self) -> None:
+        '''
+            Verifies all 7 ModuleType string members.
+
+            :exceptions: None.
+        '''
+        self.assertEqual(ModuleType.EMPTY, 'empty')
+        self.assertEqual(ModuleType.MAIN, 'main')
+        self.assertEqual(ModuleType.CLASS, 'class')
+        self.assertEqual(ModuleType.PROTOCOL, 'protocol')
+        self.assertEqual(ModuleType.DATACLASS, 'dataclass')
+        self.assertEqual(ModuleType.BASE, 'base')
+        self.assertEqual(ModuleType.ABC, 'abc')
+
+    def test_values(self) -> None:
+        '''
+            Verifies ModuleType.values returns immutable tuple of values.
+
+            :exceptions: None.
+        '''
+        values: tuple[str, ...] = ModuleType.values()
+        self.assertEqual(
+            values,
+            ('empty', 'main', 'class', 'protocol', 'dataclass', 'base', 'abc')
+        )
+
+
+if __name__ == '__main__':
+    main()
+
