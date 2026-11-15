@@ -7,7 +7,17 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   gen_py_module.pro
+   gen_py_module.core
+   gen_py_module.infrastructure
+   gen_py_module.setup
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gen_py_module.engine
 
 Module contents
 ---------------
